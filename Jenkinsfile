@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'echo Successful!'
                 sh 'hostname;uptime;ip a'
                 sh 'env'
             }
