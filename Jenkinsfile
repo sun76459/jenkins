@@ -11,7 +11,6 @@ pipeline {
                 sh 'ip a'
                 sh 'uptime'
                 sh 'df -h'
-                sh 'java --version'
             }
         }
     }
