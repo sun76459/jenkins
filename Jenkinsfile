@@ -14,7 +14,6 @@ pipeline {
             emailext (
                 subject: '$DEFAULT_SUBJECT',
                 body: '$DEFAULT_CONTENT',
-                mimeType: 'text/html',
                 to: "sun76459@gmail.com",
                 attachLog: true
             )
