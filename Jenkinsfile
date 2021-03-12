@@ -6,6 +6,10 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'node --version'
+                sh 'hostname'
+                sh 'env'
+                sh 'ip a'
+                sh 'uptime'
             }
         }
     }
