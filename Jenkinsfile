@@ -12,7 +12,6 @@ pipeline {
                 sh 'df -h'
                 sh 'pwd'
                 sh 'ls -alF'
-                sh 'git branch -a'
             }
         }
     }
