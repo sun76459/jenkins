@@ -10,6 +10,7 @@ pipeline {
                 sh 'env'
                 sh 'ip a'
                 sh 'uptime'
+                sh 'df -h'
             }
         }
     }
