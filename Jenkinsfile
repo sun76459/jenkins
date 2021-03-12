@@ -9,10 +9,9 @@ pipeline {
                 sh 'hostname'
                 sh 'env'
                 sh 'ip a'
-                sh 'uptime'
                 sh 'df -h'
+                sh 'pwd'
                 sh 'ls -alF'
-                sh 'find .'
             }
         }
     }
