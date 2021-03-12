@@ -14,7 +14,7 @@ pipeline {
             emailext (
                 subject: '$DEFAULT_SUBJECT',
                 body: '$DEFAULT_CONTENT',
-                to: "sun76459@gmail.com",
+                to: '$DEFAULT_RECIPIENTS',
                 attachLog: true
             )
         }
