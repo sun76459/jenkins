@@ -4,18 +4,10 @@ pipeline {
 			image 'python:latest'
 		}
 	}
-	options {
-	    newContainerPerStage()
-	}
     stages {	
         stage('Build') {	
             steps {	
-                sh 'cat /etc/lsb-release'
-            }	
-        }	
-        stage('Deploy') {	
-            steps {	
-                sh 'cat /etc/lsb-release'
+                sh 'python --version'
             }	
         }			
     }
