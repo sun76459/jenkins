@@ -1,0 +1,32 @@
+pipeline {	
+	agent {
+		docker {
+			image 'python:latest'
+		}
+	}
+	options {
+	    newContainerPerStage()
+	}
+    stages {	
+        stage('Build') {	
+            steps {	
+                sh 'cat /etc/lsb-release'
+            }	
+        }	
+        stage('Deploy') {	
+            steps {	
+                sh 'cat /etc/lsb-release'
+            }	
+        }			
+    }
+    post {
+        always {
+            emailext (
+                subject: '$DEFAULT_SUBJECT',
+                body: '$DEFAULT_CONTENT',
+                to: '$DEFAULT_RECIPIENTS',
+                attachLog: true
+            )
+        }
+    }
+}
