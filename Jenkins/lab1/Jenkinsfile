@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'df -h'
                 sh 'pwd'
                 sh 'go version'
             }
