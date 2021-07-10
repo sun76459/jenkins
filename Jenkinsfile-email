@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage('Test') {
+            steps {
+                sh 'hostname;uptime;ip a'
+                sh 'env'
+            }
+        }
+    }
+    post {
+        always {
+            emailext (
+                subject: '$DEFAULT_SUBJECT',
+                body: '$DEFAULT_CONTENT',
+                to: '$DEFAULT_RECIPIENTS',
+                attachLog: true
+            )
+        }
+        success {
+            echo 'success - This will run only if successful'
+        }
+        failure {
+            echo 'failure - This will run only if failed'
+        }
+        unstable {
+            echo 'unstable - This will run only if the run was marked as unstable'
+        }
+        changed {
+            echo 'changed - This will run only if the state of the Pipeline has changed\nFor example, if the Pipeline was previously failing but is now successful'
+        }
+    }
+}
